@@ -4,10 +4,10 @@ const sep = '_'
 
 function postfix(key){
   const str = key.toString().toUpperCase()
-  if(str === 'STARTED'){
+  if (str === 'STARTED'){
     return ''
   }
-  if(str.startsWith(sep)){
+  if (str.startsWith(sep)){
     return str
   }
   return `${sep}${str}`
@@ -16,15 +16,16 @@ function postfix(key){
 function duet(key, action, handler){
   // if user supplied just two params, then
   // action param is actually the handler
-  const fsa = createAction(key, handler ? action : null)
-  if(!handler){
+  const fsa = handler ? createAction(key, action)
+                      : createAction(key)
+  if (!handler){
     handler = action
   }
 
-  if(typeof handler === 'function'){
+  if (typeof handler === 'function'){
     return {
       action: fsa,
-      handler:{
+      handler: {
         [key]: handler
       }
     }
@@ -33,7 +34,7 @@ function duet(key, action, handler){
   return {
     action: fsa,
     handler: _.mapKeys(handler,
-      (v,k)=>`${key}${postfix(k)}`
+      (v, k) => `${key}${postfix(k)}`
     )
   }
 }
