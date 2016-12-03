@@ -2,6 +2,10 @@
 
 Because actions and handlers belong together.
 
+```
+$ npm i redux-duet
+```
+
 ## Quick Start
 
 Redux Duet lets you colocate actions, handlers, and types, and removes
@@ -15,6 +19,7 @@ and flexible namespacing.
 Here's how it looks like:
 
 ```javascript
+import duet from 'redux-duet'
 const { action: deleteUserAction, handler: deleteUserHandler } = duet(
   'users/DELETE',
   (state, action) => state.deleteIn(['users', action.payload])
