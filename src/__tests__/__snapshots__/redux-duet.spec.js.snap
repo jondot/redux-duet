@@ -1,0 +1,51 @@
+exports[`duet with blank action 1`] = `
+Object {
+  "type": "users/REQUEST",
+}
+`;
+
+exports[`duet with blank action 2`] = `
+Object {
+  "users/REQUEST": [Function],
+}
+`;
+
+exports[`duet with blank action, handler map 1`] = `
+Object {
+  "type": "users/REQUEST",
+}
+`;
+
+exports[`duet with blank action, handler map 2`] = `
+Object {
+  "users/REQUEST_FULFILLED": [Function],
+  "users/REQUEST_REJECTED": [Function],
+}
+`;
+
+exports[`duet with functions for action and handler 1`] = `
+Object {
+  "payload": 42,
+  "type": "users/REQUEST",
+}
+`;
+
+exports[`duet with functions for action and handler 2`] = `
+Object {
+  "users/REQUEST": [Function],
+}
+`;
+
+exports[`duet with functions for action and handler, handler map 1`] = `
+Object {
+  "payload": 42,
+  "type": "users/REQUEST",
+}
+`;
+
+exports[`duet with functions for action and handler, handler map 2`] = `
+Object {
+  "users/REQUEST_FULFILLED": [Function],
+  "users/REQUEST_REJECTED": [Function],
+}
+`;
