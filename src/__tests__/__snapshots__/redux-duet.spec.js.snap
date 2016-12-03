@@ -6,6 +6,13 @@ Object {
 
 exports[`duet with blank action 2`] = `
 Object {
+  "payload": "my-param",
+  "type": "users/REQUEST",
+}
+`;
+
+exports[`duet with blank action 3`] = `
+Object {
   "users/REQUEST": [Function],
 }
 `;

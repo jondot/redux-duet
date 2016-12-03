@@ -86,7 +86,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function duet(key, action, handler) {
 	  // if user supplied just two params, then
 	  // action param is actually the handler
-	  var fsa = (0, _reduxActions.createAction)(key, handler ? action : null);
+	  var fsa = handler ? (0, _reduxActions.createAction)(key, action) : (0, _reduxActions.createAction)(key);
 	  if (!handler) {
 	    handler = action;
 	  }
