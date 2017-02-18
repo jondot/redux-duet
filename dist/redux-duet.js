@@ -59,6 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.promised = undefined;
 
 	var _reduxActions = __webpack_require__(2);
 
@@ -71,6 +72,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	var sep = '_';
+
+	function promised(key, map) {
+	  return _lodash2.default.mapKeys(map, function (v, k) {
+	    return '' + key + postfix(k);
+	  });
+	}
+	exports.promised = promised;
+
 
 	function postfix(key) {
 	  var str = key.toString().toUpperCase();
@@ -100,9 +109,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return {
 	    action: fsa,
-	    handler: _lodash2.default.mapKeys(handler, function (v, k) {
-	      return '' + key + postfix(k);
-	    })
+	    handler: promised(key, handler)
 	  };
 	}
 

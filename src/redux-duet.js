@@ -2,6 +2,13 @@ import { createAction } from 'redux-actions'
 import _ from 'lodash'
 const sep = '_'
 
+function promised(key, map){
+  return _.mapKeys(map, function(v, k){
+    return '' + key + postfix(k)
+  })
+}
+export { promised }
+
 function postfix(key){
   const str = key.toString().toUpperCase()
   if (str === 'STARTED'){
@@ -33,9 +40,7 @@ function duet(key, action, handler){
 
   return {
     action: fsa,
-    handler: _.mapKeys(handler,
-      (v, k) => `${key}${postfix(k)}`
-    )
+    handler: promised(key, handler)
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "redux-duet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/redux-duet.js",
   "license": "MIT",
   "scripts": {
